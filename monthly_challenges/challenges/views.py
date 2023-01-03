@@ -21,7 +21,31 @@ def february(request):
 	return HttpResponse("This works! This is february's challenge!\nLearn Django every day!")
 
 
-def monthly_challenge(request, month):
+def get_month(month):
+	months = {
+		1: "january",
+		2: "february",
+		3: "march",
+		4: "april",
+		5: "may",
+		6: "june",
+		7: "july",
+		8: "august",
+		9: "september",
+		10: "october",
+		11: "november",
+		12: "december",
+	}
+	return months[month]
+
+
+
+def monthly_challenge_by_num(request, month):
+	month_as_str = get_month(month)
+	return monthly_challenge_by_str(request, month_as_str)
+
+
+def monthly_challenge_by_str(request, month):
 	challenges = {
 		"january": "Eat no meat!",
 		"february": "Learn Django 20 min a day!",
