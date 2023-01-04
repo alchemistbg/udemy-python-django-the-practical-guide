@@ -21,6 +21,15 @@ monthly_challenges = {
 
 def index(request):
     return HttpResponse("This works!\nThis is challenges' index!")
+
+
+def monthly_challenge_by_num(request, month):
+    months = list(monthly_challenges.keys())
+    try:
+        redirect_month = months[month - 1]
+        return HttpResponseRedirect(f"/challenges/{redirect_month}")
+    except:
+        return HttpResponseNotFound(f"The month number {month} is not valid!")
 def monthly_challenge_by_str(request, month):
     try:
         challenge = monthly_challenges[month]
