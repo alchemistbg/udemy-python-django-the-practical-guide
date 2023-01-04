@@ -21,6 +21,9 @@ monthly_challenges = {
 
 def index(request):
     return HttpResponse("This works!\nThis is challenges' index!")
+def monthly_challenge_by_str(request, month):
+    try:
+        challenge = monthly_challenges[month]
+        return HttpResponse(f"This works!<br><h4>This is {month}'s challenge!</h4><br><h2>{challenge}</h2>")
+    except:
         return HttpResponseNotFound(f"The month {month} is not supported")
-    challenge = challenges[month]
-    return HttpResponse(f"This works!<br><h4>This is {month}'s challenge!</h4><br><h2>{challenge}</h2>")
