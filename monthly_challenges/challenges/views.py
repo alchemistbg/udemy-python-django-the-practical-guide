@@ -17,6 +17,10 @@ monthly_challenges = {
     "november": "Create some nice project!",
     "december": "Create nice CV and find a job!",
 }
+
+
+def index(request):
+    return HttpResponse("This works!\nThis is challenges' index!")
         return HttpResponseNotFound(f"The month {month} is not supported")
     challenge = challenges[month]
     return HttpResponse(f"This works!<br><h4>This is {month}'s challenge!</h4><br><h2>{challenge}</h2>")
