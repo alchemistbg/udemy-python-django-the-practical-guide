@@ -18,20 +18,22 @@ monthly_challenges = {
 }
 
 
-def index(request):
-    months = list(monthly_challenges.keys())
-    index_response = "<ul>"
-    for month in months:
-        parent_url = reverse(f"month_challenge_str", args = [month])
-        month_response = f"<li><a href = {parent_url}>{month.capitalize()}</a></li>"
-        index_response += month_response
-    index_response += "</ul>"
+def get_months():
+    return list(monthly_challenges.keys())
 
+
+def index(request):
+    months = get_months()
+    list_items = ""
+    for month in months:
+        parent_url = reverse(f"month_challenge_str", args=[month])
+        list_items += f"<li><a href = {parent_url}>{month.capitalize()}</a></li>"
+    index_response = f"<ul>{list_items}</ul>"
     return HttpResponse("<h2>This works! This is challenges' index!</h2>" + index_response)
 
 
 def monthly_challenge_by_num(request, month):
-    months = list(monthly_challenges.keys())
+    months = get_months()
     try:
         redirect_month = months[month - 1]
         redirect_url = reverse(f"month_challenge_str", args=[redirect_month])
