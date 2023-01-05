@@ -19,7 +19,13 @@ monthly_challenges = {
 
 
 def index(request):
-    return HttpResponse("This works!\nThis is challenges' index!")
+    months = list(monthly_challenges.keys())
+    index_response = ""
+    for month in months:
+        parent_url = reverse(f"month_challenge_str", args = [month])
+        month_response = f"<a href = {parent_url}>{month.capitalize()}</a><br>"
+        index_response += month_response
+    return HttpResponse("<h2>This works! This is challenges' index!</h2>" + index_response)
 
 
 def monthly_challenge_by_num(request, month):
