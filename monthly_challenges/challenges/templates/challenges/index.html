@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block page_title %}
+	All challenges
+{% endblock page_title %}
+
+
+{% block content %}
+	<ul>
+		{% for month in months %}
+		<li><a href = {% url 'month_challenge_str' month%}>{{month | title}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock content %}
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -13,4 +28,4 @@
 		{% endfor %}
 	</ul>
 </body>
-</html>
+</html> {% endcomment %}

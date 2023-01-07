@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+
+{% block page_title %}
+	<title>{{ month | title }}'s' challenge</title>
+{% endblock page_title %}
+
+
+{% block content %}
+	<h2>This is {{ month| capfirst }}'s challenge</h2>
+	{% if challenge %}
+		<h3>{{ challenge }}</h3>
+	{% else %}
+		<h3>Just rest</h3>
+	{% endif %}
+{% endblock content %}
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -14,4 +31,4 @@
 		<h3>Just rest</h3>
 	{% endif %}
 </body>
-</html>
+</html> {% endcomment %}
