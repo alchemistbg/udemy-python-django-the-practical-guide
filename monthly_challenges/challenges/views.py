@@ -14,7 +14,7 @@ monthly_challenges = {
     "september": "Code at least 1 hour a day!",
     "october": "Learn AWS 20 min a day!",
     "november": "Create some nice project!",
-    "december": "Create nice CV and find a job!",
+    "december": None
 }
 
 

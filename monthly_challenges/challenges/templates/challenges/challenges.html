@@ -8,6 +8,10 @@
 </head>
 <body>
 	<h2>This is {{ month| capfirst }}'s challenge</h2>
-	<h3>{{ challenge }}</h3>
+	{% if challenge %}
+		<h3>{{ challenge }}</h3>
+	{% else %}
+		<h3>Just rest</h3>
+	{% endif %}
 </body>
 </html>
