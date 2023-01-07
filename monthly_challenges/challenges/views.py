@@ -24,12 +24,9 @@ def get_months():
 
 def index(request):
     months = get_months()
-    list_items = ""
-    for month in months:
-        parent_url = reverse(f"month_challenge_str", args=[month])
-        list_items += f"<li><a href = {parent_url}>{month.capitalize()}</a></li>"
-    index_response = f"<ul>{list_items}</ul>"
-    return HttpResponse("<h2>This works! This is challenges' index!</h2>" + index_response)
+    return render(request, 'challenges/index.html', {
+        "months": months
+    })
 
 
 def monthly_challenge_by_num(request, month):
