@@ -6,6 +6,9 @@
 
 
 {% block content %}
+
+	{% include  "challenges/includes/header.html"%}
+
 	<h2>This is {{ month| capfirst }}'s challenge</h2>
 	{% if challenge %}
 		<h3>{{ challenge }}</h3>
