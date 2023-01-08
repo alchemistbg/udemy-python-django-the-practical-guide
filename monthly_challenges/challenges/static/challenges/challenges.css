@@ -1,0 +1,17 @@
+body{
+	background-color: #E5CCAF;
+	color: #BB2649;
+}
+
+a{
+	color: #BB2649;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #6868AC;
+}
+
+ul {
+	list-style: none;
+}
