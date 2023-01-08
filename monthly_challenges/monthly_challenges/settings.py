@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-@2@gwnakc#5rkg$t$c#)7&^h88qkt2d!m!9bc#1lv#x&=)7@hb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Use this to test django in test mode
 ALLOWED_HOSTS = []
+# Use this to test django in production mode
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
