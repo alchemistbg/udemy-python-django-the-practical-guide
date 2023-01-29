@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block styling %}
+	<link rel="stylesheet" href="{% static "blog/index.css" %}">
+	<link rel="stylesheet" href="{% static "blog/post.css" %}">
+	<link rel="stylesheet" href="{% static "blog/all-posts.css" %}">
+	<link rel="stylesheet" href="{% static "blog/post-detail.css" %}">
+{% endblock %}
+
+{% block content %}
+<header id='main-navigation'>
+	<h1><a href="">Oggy's Blog</a></h1>
+	<nav>
+		<a href="">All posts</a>
+	</nav>
+</header>
+
+<section id='welcome'>
+	<header>
+		<img src="" alt="Oggy">
+		<h2>Oggy's Blog</h2>
+	</header>
+	<p>Hi guys. I am Oggy and I love to blog about...good things</p>
+</section>
+
+<section id="latest-posts">
+	<h2>My latest thoughts</h2>
+
+	<ul>
+		<li>
+			<article class="post">
+				<a href="">
+					<img src="" alt="Mountain Hiking">
+					<div class="post__content">
+						<h3>Mountain Hiking</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facilis doloremque sapiente asperiores, aspernatur magnam nobis sed earum id cum!</p>
+					</div>
+				</a>
+			</article>
+		</li>
+	</ul>
+</section>
+
+<section id="about">
+	<h2>What I do</h2>
+	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex eveniet nemo nostrum voluptatibus? Nam eaque repellendus recusandae temporibus, ab quam.</p>
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, consequuntur! Ea ullam fuga laudantium! A possimus culpa deserunt deleniti temporibus?</p>
+</section>
+
+{% endblock %}
